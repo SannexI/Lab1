@@ -11,13 +11,6 @@ function quad(a, b , c){
 	else if (isNaN(c)){
 		return "Коэффициент C должен быть числом 0, 1 ...";	
 	}
-	else if (b == 0){
-		lx1 = (-c/a);
-		lx2 = (c/a);
-		x1 = math.sqrt(lx1);
-		x2 = math.sqrt(lx2);
-		return "Коэффициенты: A=" +a+", B=" +b+", C=" +c+"\nКорни уравнения: X1 = "+ x1 + ", X2 = " + x2 + "" ;
-	}
 	else if (c == 0){
 		x1 = 0;
 		x2 = (-b/a);
@@ -70,7 +63,7 @@ function quad(a, b , c){
 	} else if (D < 0)
 		D1 = math.sqrt(D);
 		D1 = parseFloat(D1);
-		D1 = D1/2;
+		D1 = (D1)/(2*a);
 		D1 = D1.toFixed(2);
 		console.log(D1);
 		x1 = (-b)/(2*a);
@@ -79,7 +72,7 @@ function quad(a, b , c){
 		console.log(x2);
 		console.log(`${x1} + ${D1}*i`);
 		console.log(`${x2} - ${D1}*i`);
-		return "Коэффициенты: A=" +a+", B=" +b+", C=" +c+"\nКорни уравнения: X1 = " + `${x1}+${D1}i` +  ", X2 = " + `${x2}+${D1}i` + "\nДискриминант(D)= " + D.toFixed(2);
+		return "Коэффициенты: A=" +a+", B=" +b+", C=" +c+"\nКорни уравнения: X1 = " + `${x1}+${D1}i` +  ", X2 = " + `${x2}-${D1}i` + "\nДискриминант(D)= " + D.toFixed(2);
 }
 function prog(){
 
