@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Калькулятор квадратных уравнений</title>
+		<style>
+			.bg{
+				background-color:DarkSlateBlue;
+			}
+			.title{
+				text-align:center;
+				color:white;
+				font-size:70px;
+				font-family:'Arial';
+				padding-top:15px;
+			}
+			.example{
+				text-align:center;
+				font-size:70px;
+				color:white;
+				font-family:'Arial';
+				margin-right:40px;
+				padding:320px;
+			}
+			.end{
+				text-align:center;
+				font-size:30px;
+				color:White;
+				font-family:'Arial';
+			}
+	
+		</style>
+	</head>
+		
+	<body class = "bg">
+		<h1 class = "title">Калькулятор квадратных уравнений</h1><br>
+		<div class = "example">Ax<sup> 2 <font size = 5></sup></font> + Bx + C = 0</div>
+		<script>
+		let a = prompt('Введите значение A =',0);
+		if (a === null || a === '' || a == 0){
+			alert(" число A не может быть пустным и равняться 0");
+		} else {
+		let b = prompt('Введите значение B =',0);
+		if (b == null || b === ''){
+			alert("число B надо ввести!");
+		}else{
+		let c = prompt('Введите значение C =',0);
+		if (c == null || c === ''){
+			alert("число C надо ввести!");
+		}else{
+		a = parseFloat(a.replace(',', '.'));  
+		b = parseFloat(b.replace(',', '.'));  
+		c = parseFloat(c.replace(',', '.'));  
+		if(isNaN(a)){
+		alert("Коэффициент A должен быть числом 0, 1 ...");
+		}
+		else if(isNaN(b)){
+		alert("Коэффициент B должен быть числом 0, 1 ...");
+		}
+		else if (isNaN(c)){
+		alert("Коэффициент C должен быть числом 0, 1 ...");
+		}
+		let D = b*b-4*a*c;
+		let x1, x2;
+		if(D > 0){
+			x1 = (-b+Math.sqrt(D))/(2*a);
+			x2 = (-b-Math.sqrt(D))/(2*a);
+			alert(`x1 = ${x1.toFixed(2)}`);
+			alert(`x2 = ${x2.toFixed(2)}`);
+			alert(`Diskriminant = ${D.toFixed(2)}`);
+		} 
+		else if (D==0){
+			x1 = -b/(2*a);
+			alert(`Diskriminant = ${D.toFixed(2)}`);
+			alert(`x1 = ${x1.toFixed(2)}`);
+		} else if (D < 0){
+			D = D*(-1);
+			D1 = Math.sqrt(D);
+			D1 = (D1)/(2*a);
+			D1 = D1.toFixed(2);
+			x1 = (-b)/(2*a);
+			x2 = (-b)/(2*a);
+			D = D*(-1);
+			alert(`x1 = ${x1}+${D1}i`)
+			alert(`x2 = ${x2}-${D1}i`)
+			alert(`Diskriminant = ${D.toFixed(2)}`);
+			} 
+			}
+			}
+			}
+		</script>
+		<h1 class = "end">Спасибо за просмотр!</h1>
+
+	<body>
+
+<html>
